@@ -136,6 +136,33 @@ export async function login(_prevState: AuthState, formData: FormData): Promise<
    return { ok: true };
 }
 
+/* ───────────── Демо-вход ───────────── */
+
+const DEMO_EMAIL = "demo@vellum.store";
+
+/**
+ * Вход в демо-аккаунт без пароля. Нужен, чтобы посмотреть личный кабинет,
+ * избранное и оформление заказа, не регистрируясь.
+ * Аккаунт создаётся при первом нажатии и переиспользуется дальше.
+ */
+export async function loginAsDemo() {
+   const user = await prisma.user.upsert({
+      where: { email: DEMO_EMAIL },
+      update: { emailVerifiedAt: new Date() },
+      create: {
+         email: DEMO_EMAIL,
+         name: "Demo User",
+         // Пароля у демо-аккаунта нет: сюда кладём "пустой" хеш правильного формата.
+         password: DUMMY_HASH,
+         emailVerifiedAt: new Date(),
+      },
+      select: { id: true },
+   });
+
+   await createSession(user.id);
+   redirect("/");
+}
+
 /* ───────────── Подтверждение email ───────────── */
 
 export async function verifyEmail(_prevState: AuthState, formData: FormData): Promise<AuthState> {

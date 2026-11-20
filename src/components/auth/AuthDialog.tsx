@@ -107,16 +107,23 @@ export function AuthDialog({
                      />
                   )}
 
-                  <p className="mt-6 text-center text-sm text-ink-2">
-                     {t(copy.switchText)}{" "}
-                     <button
-                        type="button"
-                        onClick={() => onModeChange(copy.switchTo)}
-                        className="font-semibold text-ink underline decoration-1 underline-offset-4 transition-colors hover:text-cobalt"
-                     >
-                        {t(copy.switchAction)}
-                     </button>
-                  </p>
+                  <div className="mt-6 text-center">
+                     <p className="text-sm text-ink-2">
+                        {t(copy.switchText)}{" "}
+                        <button
+                           type="button"
+                           onClick={() => onModeChange(copy.switchTo)}
+                           className="font-semibold relative pb-px duration-500 text-cobalt after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:bg-cobalt after:scale-x-100"
+                        >
+                           {t(copy.switchAction)}
+                        </button>
+                     </p>
+                     <p className="mt-2 text-xs text-ink-3">
+                        {t(
+                           "Demo project — please do not use real personal data or passwords",
+                        )}
+                     </p>
+                  </div>
                </>
             )}
          </DialogContent>

@@ -1,4 +1,5 @@
 export const authAccount: Record<string, string> = {
+   "Sign in to demo account": "Войти в демо-аккаунт",
    "Use at least {count} characters.": "Используйте не менее {count} символов.",
    "Use at most {count} characters.": "Используйте не более {count} символов.",
    "That code isn't right. One try left.": "Код неверный. Осталась одна попытка.",

@@ -2,8 +2,15 @@
 
 import { useActionState, useEffect } from "react";
 import { login, type AuthState } from "@/actions/auth";
-import { Button, Field, FormError, Honeypot, PasswordField } from "@/components/ui";
+import {
+   Button,
+   Field,
+   FormError,
+   Honeypot,
+   PasswordField,
+} from "@/components/ui";
 import { useT } from "@/providers/LocaleProvider";
+import { DemoLoginButton } from "./DemoLoginButton";
 
 interface LoginFormProps {
    onSuccess: () => void;
@@ -23,7 +30,8 @@ export function LoginForm({ onSuccess, onVerify }: LoginFormProps) {
    }, [state.ok, onSuccess]);
 
    useEffect(() => {
-      if (state.step === "verify" && state.values?.email) onVerify(state.values.email);
+      if (state.step === "verify" && state.values?.email)
+         onVerify(state.values.email);
    }, [state.step, state.values?.email, onVerify]);
 
    return (
@@ -40,10 +48,17 @@ export function LoginForm({ onSuccess, onVerify }: LoginFormProps) {
             error={state.errors?.email}
             required
          />
-         <PasswordField label={t("Password")} name="password" autoComplete="current-password" error={state.errors?.password} required />
+         <PasswordField
+            label={t("Password")}
+            name="password"
+            autoComplete="current-password"
+            error={state.errors?.password}
+            required
+         />
          <Button type="submit" disabled={pending} className="mt-2 w-full">
             {pending ? t("Signing in…") : t("Sign in")}
          </Button>
+         <DemoLoginButton />
       </form>
    );
 }
