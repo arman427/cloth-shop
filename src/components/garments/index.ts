@@ -1,0 +1,1 @@
+export { GarmentSprite } from "./GarmentSprite";

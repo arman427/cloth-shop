@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Quilted Liner Jacket, black, paper pattern">
+<defs>
+<linearGradient id="shade" x1="0" x2="1">
+  <stop offset="0" stop-color="#000" stop-opacity=".16"/>
+  <stop offset=".28" stop-color="#000" stop-opacity="0"/>
+  <stop offset=".62" stop-color="#fff" stop-opacity=".08"/>
+  <stop offset="1" stop-color="#000" stop-opacity=".18"/>
+</linearGradient>
+<linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#fff" stop-opacity=".12"/>
+  <stop offset=".5" stop-color="#fff" stop-opacity="0"/>
+  <stop offset="1" stop-color="#000" stop-opacity=".1"/>
+</linearGradient>
+<pattern id="knit" width="7" height="8" patternUnits="userSpaceOnUse">
+  <path d="M0 0 L3.5 6 L7 0" fill="none" stroke="#000" stroke-opacity=".1" stroke-width="1"/>
+</pattern>
+<pattern id="twill" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+  <line x1="0" y1="0" x2="0" y2="6" stroke="#000" stroke-opacity=".06" stroke-width="2"/>
+</pattern>
+<pattern id="denim" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(-30)">
+  <line x1="0" y1="0" x2="0" y2="4" stroke="#fff" stroke-opacity=".09" stroke-width="1.2"/>
+</pattern>
+<pattern id="rib" width="6" height="10" patternUnits="userSpaceOnUse">
+  <line x1="3" y1="0" x2="3" y2="10" stroke="#000" stroke-opacity=".22" stroke-width="1.2"/>
+</pattern>
+<pattern id="quilt" width="36" height="36" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <path d="M0 0 H36 M0 0 V36" fill="none" stroke="#000" stroke-opacity=".22" stroke-width="1.2" stroke-dasharray="3 2"/>
+</pattern>
+<pattern id="cable" width="28" height="34" patternUnits="userSpaceOnUse">
+  <path d="M7 0 Q21 8.5 7 17 Q-7 25.5 7 34 M21 0 Q7 8.5 21 17 Q35 25.5 21 34" fill="none" stroke="#000" stroke-opacity=".16" stroke-width="2.2"/>
+</pattern>
+<pattern id="linen" width="5" height="5" patternUnits="userSpaceOnUse">
+  <path d="M0 1.5 H5 M1 0 V5" stroke="#000" stroke-opacity=".05" stroke-width="1"/>
+</pattern>
+<pattern id="grain" width="14" height="14" patternUnits="userSpaceOnUse">
+  <circle cx="3" cy="4" r="1" fill="#000" fill-opacity=".08"/>
+  <circle cx="10" cy="9" r="1.2" fill="#000" fill-opacity=".06"/>
+  <circle cx="6" cy="12" r=".8" fill="#fff" fill-opacity=".08"/>
+</pattern>
+<pattern id="grid-paper" width="96" height="96" patternUnits="userSpaceOnUse">
+  <path d="M0 0 H96 M0 0 V96" fill="none" stroke="#2c44d8" stroke-opacity=".1" stroke-width="1"/>
+  <path d="M24 0 V96 M48 0 V96 M72 0 V96 M0 24 H96 M0 48 H96 M0 72 H96" fill="none" stroke="#2c44d8" stroke-opacity=".045" stroke-width="1"/>
+</pattern>
+<pattern id="grid-dark" width="32" height="32" patternUnits="userSpaceOnUse">
+  <path d="M0 0 H32 M0 0 V32" fill="none" stroke="#7c8cff" stroke-opacity=".09" stroke-width="1"/>
+</pattern>
+<filter id="drop" x="-25%" y="-20%" width="150%" height="150%">
+  <feDropShadow dx="0" dy="26" stdDeviation="20" flood-color="rgb(60 40 10)" flood-opacity=".18"/>
+</filter>
+<filter id="soft" x="-10%" y="-10%" width="120%" height="130%">
+  <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgb(20 24 31)" flood-opacity=".14"/>
+</filter>
+<radialGradient id="floor" cx=".5" cy=".5" r=".5">
+  <stop offset="0" stop-color="#000" stop-opacity=".16"/>
+  <stop offset="1" stop-color="#000" stop-opacity="0"/>
+</radialGradient></defs>
+<filter id="blueprint" color-interpolation-filters="sRGB">
+  <feColorMatrix type="matrix" values="0 0 0 0 0.17  0 0 0 0 0.27  0 0 0 0 0.85  -0.667 -0.667 -0.667 2 0"/>
+</filter>
+<rect width="800" height="1000" fill="#f4f3ee"/>
+<rect width="800" height="1000" fill="url(#grid-paper)"/>
+<g transform="translate(116 150) scale(1.42)">
+  <g opacity=".55"><g transform="translate(0 20)"><g stroke="#1b1e24" stroke-opacity=".55" stroke-width="1.5" stroke-linejoin="round">
+  <path d="M120 62 L86 80 Q66 190 56 334 L100 340 Q112 236 127 152 Z" fill="#dfe4fb"/><path d="M280 62 L314 80 Q334 190 344 334 L300 340 Q288 236 273 152 Z" fill="#dfe4fb"/>
+  <path d="M120 62 L86 80 Q66 190 56 334 L100 340 Q112 236 127 152 Z" fill="#000" fill-opacity=".09"/><path d="M280 62 L314 80 Q334 190 344 334 L300 340 Q288 236 273 152 Z" fill="#000" fill-opacity=".13"/>
+  <path d="M120 62 L86 80 Q66 190 56 334 L100 340 Q112 236 127 152 Z" fill="url(#quilt)" stroke="none"/><path d="M280 62 L314 80 Q334 190 344 334 L300 340 Q288 236 273 152 Z" fill="url(#quilt)" stroke="none"/>
+  <path d="M56 334 L100 340 L98 368 L53 362 Z" fill="#dfe4fb"/><path d="M344 334 L300 340 L302 368 L347 362 Z" fill="#dfe4fb"/>
+  <path d="M166 34 L120 62 L127 152 L128 404 Q200 412 272 404 L273 152 L280 62 L234 34 Q200 46 166 34 Z" fill="#dfe4fb"/><path d="M166 34 L120 62 L127 152 L128 404 Q200 412 272 404 L273 152 L280 62 L234 34 Q200 46 166 34 Z" fill="url(#shade)" stroke="none"/><path d="M166 34 L120 62 L127 152 L128 404 Q200 412 272 404 L273 152 L280 62 L234 34 Q200 46 166 34 Z" fill="url(#quilt)" stroke="none"/>
+  <path d="M166 34 Q200 46 234 34 Q200 60 166 34 Z" fill="#000" fill-opacity=".35"/>
+  <path d="M192 64 L208 64 L208 409 L192 409 Z" fill="#dfe4fb"/>
+  <path d="M166 34 L152 68 L180 100 L200 62 Q186 48 166 34 Z" fill="#dfe4fb"/>
+  <path d="M234 34 L248 68 L220 100 L200 62 Q214 48 234 34 Z" fill="#dfe4fb"/><path d="M234 34 L248 68 L220 100 L200 62 Q214 48 234 34 Z" fill="#000" fill-opacity=".08"/>
+  
+</g>
+<path d="M166 34 L120 62 L127 152 L128 404 Q200 412 272 404 L273 152 L280 62 L234 34 Q200 46 166 34 Z" fill="url(#quilt)" stroke="none"/>
+<g stroke="#1b1e24" stroke-opacity=".55" stroke-width="1.5" stroke-linejoin="round"><path d="M134 300 L184 300 L184 360 L134 360 Z" fill="#dfe4fb"/><path d="M216 300 L266 300 L266 360 L216 360 Z" fill="#dfe4fb"/></g>
+<path d="M134 300 L184 300 L184 360 L134 360 Z M216 300 L266 300 L266 360 L216 360 Z" fill="#000" fill-opacity=".06"/>
+<path d="M124 96 Q200 104 276 96 M196 68 L196 404 M204 68 L204 404 M138 306 L180 306 M220 306 L262 306" fill="none" stroke="#1b1e24" stroke-opacity=".38" stroke-width="1" stroke-dasharray="3 3"/>
+<g fill="#646771" stroke="#000" stroke-opacity=".25"><circle cx="200" cy="110" r="4.5"/><circle cx="200" cy="160" r="4.5"/><circle cx="200" cy="210" r="4.5"/><circle cx="200" cy="260" r="4.5"/><circle cx="200" cy="310" r="4.5"/><circle cx="200" cy="360" r="4.5"/></g>
+<path d="M120 62 L86 80 Q66 190 56 334 L100 340 Q112 236 127 152 Z M280 62 L314 80 Q334 190 344 334 L300 340 Q288 236 273 152 Z" fill="url(#quilt)"/></g></g>
+  <g filter="url(#blueprint)"><g transform="translate(0 20)"><g stroke="#1b1e24" stroke-opacity=".55" stroke-width="1.5" stroke-linejoin="round">
+  <path d="M120 62 L86 80 Q66 190 56 334 L100 340 Q112 236 127 152 Z" fill="#ffffff"/><path d="M280 62 L314 80 Q334 190 344 334 L300 340 Q288 236 273 152 Z" fill="#ffffff"/>
+  <path d="M120 62 L86 80 Q66 190 56 334 L100 340 Q112 236 127 152 Z" fill="#000" fill-opacity=".09"/><path d="M280 62 L314 80 Q334 190 344 334 L300 340 Q288 236 273 152 Z" fill="#000" fill-opacity=".13"/>
+  <path d="M120 62 L86 80 Q66 190 56 334 L100 340 Q112 236 127 152 Z" fill="url(#quilt)" stroke="none"/><path d="M280 62 L314 80 Q334 190 344 334 L300 340 Q288 236 273 152 Z" fill="url(#quilt)" stroke="none"/>
+  <path d="M56 334 L100 340 L98 368 L53 362 Z" fill="#ffffff"/><path d="M344 334 L300 340 L302 368 L347 362 Z" fill="#ffffff"/>
+  <path d="M166 34 L120 62 L127 152 L128 404 Q200 412 272 404 L273 152 L280 62 L234 34 Q200 46 166 34 Z" fill="#ffffff"/><path d="M166 34 L120 62 L127 152 L128 404 Q200 412 272 404 L273 152 L280 62 L234 34 Q200 46 166 34 Z" fill="url(#shade)" stroke="none"/><path d="M166 34 L120 62 L127 152 L128 404 Q200 412 272 404 L273 152 L280 62 L234 34 Q200 46 166 34 Z" fill="url(#quilt)" stroke="none"/>
+  <path d="M166 34 Q200 46 234 34 Q200 60 166 34 Z" fill="#000" fill-opacity=".35"/>
+  <path d="M192 64 L208 64 L208 409 L192 409 Z" fill="#ffffff"/>
+  <path d="M166 34 L152 68 L180 100 L200 62 Q186 48 166 34 Z" fill="#ffffff"/>
+  <path d="M234 34 L248 68 L220 100 L200 62 Q214 48 234 34 Z" fill="#ffffff"/><path d="M234 34 L248 68 L220 100 L200 62 Q214 48 234 34 Z" fill="#000" fill-opacity=".08"/>
+  
+</g>
+<path d="M166 34 L120 62 L127 152 L128 404 Q200 412 272 404 L273 152 L280 62 L234 34 Q200 46 166 34 Z" fill="url(#quilt)" stroke="none"/>
+<g stroke="#1b1e24" stroke-opacity=".55" stroke-width="1.5" stroke-linejoin="round"><path d="M134 300 L184 300 L184 360 L134 360 Z" fill="#ffffff"/><path d="M216 300 L266 300 L266 360 L216 360 Z" fill="#ffffff"/></g>
+<path d="M134 300 L184 300 L184 360 L134 360 Z M216 300 L266 300 L266 360 L216 360 Z" fill="#000" fill-opacity=".06"/>
+<path d="M124 96 Q200 104 276 96 M196 68 L196 404 M204 68 L204 404 M138 306 L180 306 M220 306 L262 306" fill="none" stroke="#1b1e24" stroke-opacity=".38" stroke-width="1" stroke-dasharray="3 3"/>
+<g fill="#737373" stroke="#000" stroke-opacity=".25"><circle cx="200" cy="110" r="4.5"/><circle cx="200" cy="160" r="4.5"/><circle cx="200" cy="210" r="4.5"/><circle cx="200" cy="260" r="4.5"/><circle cx="200" cy="310" r="4.5"/><circle cx="200" cy="360" r="4.5"/></g>
+<path d="M120 62 L86 80 Q66 190 56 334 L100 340 Q112 236 127 152 Z M280 62 L314 80 Q334 190 344 334 L300 340 Q288 236 273 152 Z" fill="url(#quilt)"/></g></g>
+</g>
+<g fill="none" stroke="#2c44d8" stroke-width="2.2" stroke-linecap="round">
+  <path d="M400 260 V760 M388 280 L400 260 L412 280 M388 740 L400 760 L412 740"/>
+</g>
+<g font-family="ui-monospace, 'DejaVu Sans Mono', Menlo, monospace" fill="#2336ad">
+  <text x="64" y="92" font-size="22" letter-spacing="3">VELLUM</text>
+  <text x="64" y="124" font-size="18" fill-opacity=".7">№ 003 · M</text>
+  <text x="736" y="936" font-size="18" text-anchor="end" fill-opacity=".7">1 : 10</text>
+</g>
+<g fill="none" stroke="#2c44d8" stroke-opacity=".55" stroke-width="2"><path d="M64 908 H184 M64 900 V916 M184 900 V916"/></g>
+</svg>

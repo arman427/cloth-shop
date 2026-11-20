@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Fine Rollneck, black">
+<defs>
+<linearGradient id="shade" x1="0" x2="1">
+  <stop offset="0" stop-color="#000" stop-opacity=".16"/>
+  <stop offset=".28" stop-color="#000" stop-opacity="0"/>
+  <stop offset=".62" stop-color="#fff" stop-opacity=".08"/>
+  <stop offset="1" stop-color="#000" stop-opacity=".18"/>
+</linearGradient>
+<linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#fff" stop-opacity=".12"/>
+  <stop offset=".5" stop-color="#fff" stop-opacity="0"/>
+  <stop offset="1" stop-color="#000" stop-opacity=".1"/>
+</linearGradient>
+<pattern id="knit" width="7" height="8" patternUnits="userSpaceOnUse">
+  <path d="M0 0 L3.5 6 L7 0" fill="none" stroke="#000" stroke-opacity=".1" stroke-width="1"/>
+</pattern>
+<pattern id="twill" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+  <line x1="0" y1="0" x2="0" y2="6" stroke="#000" stroke-opacity=".06" stroke-width="2"/>
+</pattern>
+<pattern id="denim" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(-30)">
+  <line x1="0" y1="0" x2="0" y2="4" stroke="#fff" stroke-opacity=".09" stroke-width="1.2"/>
+</pattern>
+<pattern id="rib" width="6" height="10" patternUnits="userSpaceOnUse">
+  <line x1="3" y1="0" x2="3" y2="10" stroke="#000" stroke-opacity=".22" stroke-width="1.2"/>
+</pattern>
+<pattern id="quilt" width="36" height="36" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <path d="M0 0 H36 M0 0 V36" fill="none" stroke="#000" stroke-opacity=".22" stroke-width="1.2" stroke-dasharray="3 2"/>
+</pattern>
+<pattern id="cable" width="28" height="34" patternUnits="userSpaceOnUse">
+  <path d="M7 0 Q21 8.5 7 17 Q-7 25.5 7 34 M21 0 Q7 8.5 21 17 Q35 25.5 21 34" fill="none" stroke="#000" stroke-opacity=".16" stroke-width="2.2"/>
+</pattern>
+<pattern id="linen" width="5" height="5" patternUnits="userSpaceOnUse">
+  <path d="M0 1.5 H5 M1 0 V5" stroke="#000" stroke-opacity=".05" stroke-width="1"/>
+</pattern>
+<pattern id="grain" width="14" height="14" patternUnits="userSpaceOnUse">
+  <circle cx="3" cy="4" r="1" fill="#000" fill-opacity=".08"/>
+  <circle cx="10" cy="9" r="1.2" fill="#000" fill-opacity=".06"/>
+  <circle cx="6" cy="12" r=".8" fill="#fff" fill-opacity=".08"/>
+</pattern>
+<pattern id="grid-paper" width="96" height="96" patternUnits="userSpaceOnUse">
+  <path d="M0 0 H96 M0 0 V96" fill="none" stroke="#2c44d8" stroke-opacity=".1" stroke-width="1"/>
+  <path d="M24 0 V96 M48 0 V96 M72 0 V96 M0 24 H96 M0 48 H96 M0 72 H96" fill="none" stroke="#2c44d8" stroke-opacity=".045" stroke-width="1"/>
+</pattern>
+<pattern id="grid-dark" width="32" height="32" patternUnits="userSpaceOnUse">
+  <path d="M0 0 H32 M0 0 V32" fill="none" stroke="#7c8cff" stroke-opacity=".09" stroke-width="1"/>
+</pattern>
+<filter id="drop" x="-25%" y="-20%" width="150%" height="150%">
+  <feDropShadow dx="0" dy="26" stdDeviation="20" flood-color="rgb(60 40 10)" flood-opacity=".18"/>
+</filter>
+<filter id="soft" x="-10%" y="-10%" width="120%" height="130%">
+  <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgb(20 24 31)" flood-opacity=".14"/>
+</filter>
+<radialGradient id="floor" cx=".5" cy=".5" r=".5">
+  <stop offset="0" stop-color="#000" stop-opacity=".16"/>
+  <stop offset="1" stop-color="#000" stop-opacity="0"/>
+</radialGradient></defs>
+<rect width="800" height="1000" fill="#cecfcc"/>
+<rect width="800" height="1000" fill="url(#grid-paper)" opacity=".55"/>
+<ellipse cx="400" cy="930" rx="230" ry="34" fill="url(#floor)"/>
+<g fill="none" stroke-linecap="round">
+  <path d="M400 150 Q400 112 426 112 Q450 114 448 138" stroke="#8d8a83" stroke-width="7"/>
+  <path d="M400 150 L400 172" stroke="#8d8a83" stroke-width="7"/>
+  <path d="M232 250 Q300 196 400 172 Q500 196 568 250" stroke="#7a5a3c" stroke-width="16"/>
+  <path d="M232 250 Q300 196 400 172 Q500 196 568 250" stroke="#fff" stroke-opacity=".18" stroke-width="4" transform="translate(0 -4)"/>
+</g>
+<g transform="translate(100 170) scale(1.5)" filter="url(#drop)"><g transform="translate(0 34)"><g stroke="#1b1e24" stroke-opacity=".55" stroke-width="1.5" stroke-linejoin="round">
+  <path d="M112 60 L76 86 Q58 200 52 338 L102 344 Q114 240 120 160 Z" fill="#14181F"/><path d="M288 60 L324 86 Q342 200 348 338 L298 344 Q286 240 280 160 Z" fill="#14181F"/>
+  <path d="M112 60 L76 86 Q58 200 52 338 L102 344 Q114 240 120 160 Z" fill="url(#knit)" stroke="none"/><path d="M288 60 L324 86 Q342 200 348 338 L298 344 Q286 240 280 160 Z" fill="url(#knit)" stroke="none"/>
+  <path d="M112 60 L76 86 Q58 200 52 338 L102 344 Q114 240 120 160 Z" fill="#000" fill-opacity=".1"/><path d="M288 60 L324 86 Q342 200 348 338 L298 344 Q286 240 280 160 Z" fill="#000" fill-opacity=".14"/>
+  <path d="M52 338 L102 344 L100 382 L50 376 Z" fill="#14181F"/><path d="M348 338 L298 344 L300 382 L350 376 Z" fill="#14181F"/>
+  <path d="M52 338 L102 344 L100 382 L50 376 Z" fill="url(#rib)"/><path d="M348 338 L298 344 L300 382 L350 376 Z" fill="url(#rib)"/>
+  <path d="M162 34 L112 60 L120 160 L122 372 L278 372 L280 160 L288 60 L238 34 Q200 76 162 34 Z" fill="#14181F"/><path d="M162 34 L112 60 L120 160 L122 372 L278 372 L280 160 L288 60 L238 34 Q200 76 162 34 Z" fill="url(#knit)" stroke="none"/><path d="M162 34 L112 60 L120 160 L122 372 L278 372 L280 160 L288 60 L238 34 Q200 76 162 34 Z" fill="url(#shade)" stroke="none"/>
+  <path d="M122 372 L278 372 L280 412 L120 412 Z" fill="#14181F"/><path d="M122 372 L278 372 L280 412 L120 412 Z" fill="url(#rib)"/>
+  <path d="M162 34 Q200 46 238 34 Q200 58 162 34 Z" fill="#000" fill-opacity=".3"/>
+  
+</g>
+<g fill="none" stroke="#000" stroke-opacity="0.14" stroke-width="2" stroke-linecap="round"><path d="M150 220 Q160 290 152 360"/><path d="M252 230 Q244 300 250 362"/><path d="M80 170 Q74 240 72 300"/></g>
+<g stroke="#1b1e24" stroke-opacity=".55" stroke-width="1.5" stroke-linejoin="round">
+  <path d="M158 -4 Q200 6 242 -4 L246 42 Q200 58 154 42 Z" fill="#14181F"/>
+</g>
+<path d="M158 -4 Q200 6 242 -4 L246 42 Q200 58 154 42 Z" fill="url(#rib)"/>
+<path d="M156 18 Q200 30 244 18" fill="none" stroke="#000" stroke-opacity=".18" stroke-width="2"/></g></g>
+<g fill="none" stroke="#2c44d8" stroke-opacity="0.5" stroke-width="2.5">
+  <path d="M40 70 V40 H70"/><path d="M730 40 H760 V70"/>
+  <path d="M40 930 V960 H70"/><path d="M730 960 H760 V930"/>
+</g>
+</svg>

@@ -1,26 +1,285 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme static {
+   /* Surfaces */
+   --color-paper: #eceee9;
+   --color-paper-2: #e2e5de;
+   --color-card: #f6f7f3;
+   --color-panel: #f3f4f0;
+   --color-panel-dark: #1a1f28;
+   --color-field-dark: #232935;
+
+   /* Ink */
+   --color-ink: #14181f;
+   --color-ink-2: #4a505a;
+   --color-ink-3: #7d838c;
+   --color-line: rgb(20 24 31 / 0.12);
+   --color-line-inverse: rgb(255 255 255 / 0.14);
+
+   /* Text on dark */
+   --color-mute-1: #b6bcc7;
+   --color-mute-2: #a9b0bc;
+   --color-mute-3: #7f8796;
+
+   /* Accent: tailor's marker */
+   --color-cobalt: #2c44d8;
+   --color-cobalt-soft: #7c8cff;
+
+   /* Garment & tile tints */
+   --color-camel: #b88b57;
+   --color-olive: #6f7452;
+   --color-navy: #29324a;
+   --color-oat: #d9d0bc;
+   --color-rust: #9a4b30;
+   --color-charcoal: #3a3d42;
+   --color-ecru: #e8e1d0;
+   --color-sage: #c9d1be;
+   --color-mist: #cdd3de;
+   --color-sand: #e2dccf;
+   --color-clay: #c9b8a0;
+
+   /* Type scale: every size keeps the body's 1.55 line height */
+   --text-xs--line-height: 1.55;
+   --text-sm--line-height: 1.55;
+   --text-base--line-height: 1.55;
+   --text-lg--line-height: 1.55;
+   --text-xl--line-height: 1.55;
+
+   /* Radius */
+   --radius-card: 16px;
+   --radius-panel: 20px;
+   --radius-block: 28px;
+
+   /* Shadows */
+   --shadow-float: 0 1px 0 rgb(20 24 31 / 0.06), 0 18px 40px -18px rgb(20 24 31 / 0.25);
+   --shadow-swatch: inset 0 0 0 1px rgb(0 0 0 / 0.12);
 }
 
+/* Fonts come from next/font (see app/layout.tsx). --font-body / --font-heading switch by language below. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+   --font-display: var(--font-heading), "Arial Narrow", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ru: — вариант для русской версии, например ru:text-[48px]. :lang() наследуется от <html lang> */
+@custom-variant ru (&:lang(ru));
+
+/* ───────────────────────── Base ───────────────────────── */
+
+@layer base {
+   html {
+      color-scheme: light;
+      --font-body: var(--font-dm-sans);
+      --font-heading: var(--font-anton);
+   }
+
+   /*
+    * В Anton и DM Sans нет кириллицы: для русского — Oswald и Manrope.
+    * Oswald тоньше Anton, поэтому заголовки делаем жирнее.
+    */
+   html:lang(ru) {
+      --font-body: var(--font-manrope);
+      --font-heading: var(--font-oswald);
+   }
+
+   :lang(ru) .font-display {
+      font-weight: 700;
+   }
+
+   /* Длинные слова не выталкивают заголовок за край экрана; крупные заголовки ещё и переносятся по слогам */
+   h1,
+   h2,
+   h3 {
+      overflow-wrap: break-word;
+   }
+
+   .font-display {
+      hyphens: auto;
+   }
+
+   body {
+      background: var(--color-paper);
+      color: var(--color-ink);
+      font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+   }
+
+   :focus-visible {
+      outline: 2px solid var(--color-cobalt);
+      outline-offset: 3px;
+   }
+
+   @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+         transition-duration: 0.01ms !important;
+         animation-duration: 0.01ms !important;
+      }
+   }
+
+
+   input:-webkit-autofill,
+   input:-webkit-autofill:hover,
+   input:-webkit-autofill:focus,
+   input:-webkit-autofill:active,
+   textarea:-webkit-autofill,
+   textarea:-webkit-autofill:hover,
+   textarea:-webkit-autofill:focus,
+   select:-webkit-autofill,
+   select:-webkit-autofill:hover,
+   select:-webkit-autofill:focus,
+   input:autofill,
+   textarea:autofill,
+   select:autofill {
+      transition:
+         background-color 0s 600000s,
+         color 0s 600000s !important;
+      caret-color: currentColor;
+      filter: none;
+   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ───────────────────────── Utilities ───────────────────────── */
+
+/* Pattern-paper grid used behind the hero blueprint */
+@utility bg-blueprint {
+   background-image:
+      linear-gradient(rgb(44 68 216 / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(44 68 216 / 0.1) 1px, transparent 1px),
+      linear-gradient(rgb(44 68 216 / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(44 68 216 / 0.045) 1px, transparent 1px);
+   background-size:
+      96px 96px,
+      96px 96px,
+      24px 24px,
+      24px 24px;
+   background-position: -1px -1px;
+}
+
+/* Same grid on the dark workshop panel */
+@utility bg-blueprint-dark {
+   background-image:
+      linear-gradient(rgb(124 140 255 / 0.09) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(124 140 255 / 0.09) 1px, transparent 1px);
+   background-size: 32px 32px;
+}
+
+/* Фирменное написание VELLUM: всегда Anton, в том числе в русской версии (слово латинское) */
+@utility font-brand {
+   font-family: var(--font-anton), "Arial Narrow", sans-serif;
+}
+
+/* Outlined wordmark in the footer */
+@utility text-outline {
+   color: transparent;
+   -webkit-text-stroke: 1.5px rgb(124 140 255 / 0.45);
+}
+
+/* ───────────────────────── Animations ───────────────────────── */
+
+/* Dialog и боковое меню: включаются по data-state, который ставит Radix (см. components/ui/dialog.tsx) */
+@keyframes overlay-in {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+@keyframes overlay-out {
+   from {
+      opacity: 1;
+   }
+
+   to {
+      opacity: 0;
+   }
+}
+
+@keyframes dialog-in {
+   from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.97);
+   }
+
+   to {
+      opacity: 1;
+      transform: none;
+   }
+}
+
+@keyframes dialog-out {
+   from {
+      opacity: 1;
+      transform: none;
+   }
+
+   to {
+      opacity: 0;
+      transform: translateY(8px) scale(0.98);
+   }
+}
+
+@keyframes sheet-in {
+   from {
+      transform: translateX(-100%);
+   }
+
+   to {
+      transform: none;
+   }
+}
+
+@keyframes sheet-out {
+   from {
+      transform: none;
+   }
+
+   to {
+      transform: translateX(-100%);
+   }
+}
+
+
+/* Плавное появление: плашка товара в hero, контент страниц */
+@keyframes fade-in {
+   from {
+      opacity: 0;
+      transform: translateY(6px);
+   }
+
+   to {
+      opacity: 1;
+      transform: none;
+   }
+}
+
+/* Мигающий курсор в поле ввода кода (components/ui/input-otp.tsx) */
+@keyframes caret-blink {
+   0%,
+   70%,
+   100% {
+      opacity: 1;
+   }
+
+   20%,
+   50% {
+      opacity: 0;
+   }
+}
+
+.animate-caret-blink {
+   animation: caret-blink 1.25s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+   .animate-caret-blink {
+      animation: none;
+   }
 }

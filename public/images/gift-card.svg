@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="A Vellum gift card">
+<defs>
+<linearGradient id="shade" x1="0" x2="1">
+  <stop offset="0" stop-color="#000" stop-opacity=".16"/>
+  <stop offset=".28" stop-color="#000" stop-opacity="0"/>
+  <stop offset=".62" stop-color="#fff" stop-opacity=".08"/>
+  <stop offset="1" stop-color="#000" stop-opacity=".18"/>
+</linearGradient>
+<linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#fff" stop-opacity=".12"/>
+  <stop offset=".5" stop-color="#fff" stop-opacity="0"/>
+  <stop offset="1" stop-color="#000" stop-opacity=".1"/>
+</linearGradient>
+<pattern id="knit" width="7" height="8" patternUnits="userSpaceOnUse">
+  <path d="M0 0 L3.5 6 L7 0" fill="none" stroke="#000" stroke-opacity=".1" stroke-width="1"/>
+</pattern>
+<pattern id="twill" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+  <line x1="0" y1="0" x2="0" y2="6" stroke="#000" stroke-opacity=".06" stroke-width="2"/>
+</pattern>
+<pattern id="denim" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(-30)">
+  <line x1="0" y1="0" x2="0" y2="4" stroke="#fff" stroke-opacity=".09" stroke-width="1.2"/>
+</pattern>
+<pattern id="rib" width="6" height="10" patternUnits="userSpaceOnUse">
+  <line x1="3" y1="0" x2="3" y2="10" stroke="#000" stroke-opacity=".22" stroke-width="1.2"/>
+</pattern>
+<pattern id="quilt" width="36" height="36" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <path d="M0 0 H36 M0 0 V36" fill="none" stroke="#000" stroke-opacity=".22" stroke-width="1.2" stroke-dasharray="3 2"/>
+</pattern>
+<pattern id="cable" width="28" height="34" patternUnits="userSpaceOnUse">
+  <path d="M7 0 Q21 8.5 7 17 Q-7 25.5 7 34 M21 0 Q7 8.5 21 17 Q35 25.5 21 34" fill="none" stroke="#000" stroke-opacity=".16" stroke-width="2.2"/>
+</pattern>
+<pattern id="linen" width="5" height="5" patternUnits="userSpaceOnUse">
+  <path d="M0 1.5 H5 M1 0 V5" stroke="#000" stroke-opacity=".05" stroke-width="1"/>
+</pattern>
+<pattern id="grain" width="14" height="14" patternUnits="userSpaceOnUse">
+  <circle cx="3" cy="4" r="1" fill="#000" fill-opacity=".08"/>
+  <circle cx="10" cy="9" r="1.2" fill="#000" fill-opacity=".06"/>
+  <circle cx="6" cy="12" r=".8" fill="#fff" fill-opacity=".08"/>
+</pattern>
+<pattern id="grid-paper" width="96" height="96" patternUnits="userSpaceOnUse">
+  <path d="M0 0 H96 M0 0 V96" fill="none" stroke="#2c44d8" stroke-opacity=".1" stroke-width="1"/>
+  <path d="M24 0 V96 M48 0 V96 M72 0 V96 M0 24 H96 M0 48 H96 M0 72 H96" fill="none" stroke="#2c44d8" stroke-opacity=".045" stroke-width="1"/>
+</pattern>
+<pattern id="grid-dark" width="32" height="32" patternUnits="userSpaceOnUse">
+  <path d="M0 0 H32 M0 0 V32" fill="none" stroke="#7c8cff" stroke-opacity=".09" stroke-width="1"/>
+</pattern>
+<filter id="drop" x="-25%" y="-20%" width="150%" height="150%">
+  <feDropShadow dx="0" dy="26" stdDeviation="20" flood-color="rgb(60 40 10)" flood-opacity=".18"/>
+</filter>
+<filter id="soft" x="-10%" y="-10%" width="120%" height="130%">
+  <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgb(20 24 31)" flood-opacity=".14"/>
+</filter>
+<radialGradient id="floor" cx=".5" cy=".5" r=".5">
+  <stop offset="0" stop-color="#000" stop-opacity=".16"/>
+  <stop offset="1" stop-color="#000" stop-opacity="0"/>
+</radialGradient></defs>
+<rect width="1200" height="900" fill="#d9d0bc"/><rect width="1200" height="900" fill="url(#linen)"/>
+<g transform="translate(250 260) rotate(-8 350 240)" filter="url(#drop)">
+  <path d="M0 0 H700 V460 H0 Z" fill="#efe6d1"/><path d="M0 0 L350 250 L700 0" fill="none" stroke="#000" stroke-opacity=".15" stroke-width="3"/>
+  <path d="M0 460 L280 220 M700 460 L420 220" stroke="#000" stroke-opacity=".08" stroke-width="3"/>
+</g>
+<g transform="translate(300 180) rotate(6 300 190)" filter="url(#drop)">
+  <rect width="600" height="380" rx="28" fill="#14181f"/>
+  <rect width="600" height="380" rx="28" fill="url(#grid-dark)"/>
+  <g transform="translate(56 64)" fill="none" stroke="#7c8cff" stroke-width="5"><path d="M0 0 L28 50 L56 0"/><path d="M14 0 L42 0" stroke-dasharray="5 5"/></g>
+  <text x="130" y="108" font-size="56" letter-spacing="16" fill="#f4f3ee" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif">VELLUM</text>
+  <text x="56" y="320" font-size="26" letter-spacing="6" fill="#7c8cff" font-family="ui-monospace, 'DejaVu Sans Mono', Menlo, monospace">GIFT CARD</text>
+  <text x="544" y="320" font-size="64" text-anchor="end" font-weight="700" fill="#f4f3ee" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif">$150</text>
+  <path d="M56 230 H360" stroke="#fff" stroke-opacity=".15" stroke-width="2" stroke-dasharray="8 8"/>
+</g>
+<path d="M300 760 Q520 700 640 760 T980 740" fill="none" stroke="#2c44d8" stroke-width="10" stroke-linecap="round"/>
+</svg>

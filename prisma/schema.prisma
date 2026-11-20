@@ -1,0 +1,234 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+   provider = "prisma-client"
+   output   = "../generated/prisma"
+}
+
+datasource db {
+   provider = "postgresql"
+}
+
+enum Size {
+   XS
+   S
+   M
+   L
+   XL
+   ONE_SIZE
+}
+
+enum OrderStatus {
+   NEW
+   PAID
+   SHIPPED
+   CANCELLED
+}
+
+enum Gender {
+   WOMEN
+   MEN
+   UNISEX
+}
+
+enum Badge {
+   NEW
+   BACK_IN_STOCK
+}
+
+model User {
+   id Int @id @default(autoincrement())
+
+   email    String @unique
+   // Хеш пароля в формате "соль:хеш" (см. src/lib/auth/password.ts). Сам пароль нигде не хранится.
+   password String
+
+   name    String?
+   phone   String?
+   address String?
+
+   // Когда человек подтвердил email кодом из письма. null: подтверждения не было, войти нельзя.
+   emailVerifiedAt DateTime?
+
+   createdAt DateTime @default(now())
+   updatedAt DateTime @updatedAt
+   orders    Order[]
+   sessions  Session[]
+   favorites Favorite[]
+   emailCode EmailCode?
+}
+
+// Код подтверждения email: 6 цифр, которые уходят на почту. У пользователя не больше одного кода сразу
+// (userId уникален): новый код заменяет старый. В базе лежит только хеш кода, не сам код.
+model EmailCode {
+   id       Int      @id @default(autoincrement())
+   codeHash String
+   // Код живёт 10 минут
+   expiresAt DateTime
+   // Сколько раз ввели неверно. После 5 ошибок код сгорает.
+   attempts  Int      @default(0)
+   createdAt DateTime @default(now())
+
+   userId Int  @unique
+   user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Счётчики для ограничения попыток (см. src/lib/security/rateLimit.ts).
+// key: что считаем ("login:ip:1.2.3.4"). count: сколько раз за окно. resetAt: когда окно закончится.
+model RateLimit {
+   key     String   @id
+   count   Int
+   resetAt DateTime
+
+   @@index([resetAt])
+}
+
+// Серверная сессия. Токен живёт только в httpOnly-куке браузера,
+// а в базе лежит его SHA-256 хеш: если базу украдут, по ним нельзя войти.
+model Session {
+   id        String   @id
+   expiresAt DateTime
+   createdAt DateTime @default(now())
+
+   userId Int
+   user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+   @@index([userId])
+   @@index([expiresAt])
+}
+
+model Favorite {
+   createdAt DateTime @default(now())
+
+   userId Int
+   user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+   productId Int
+   product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+   @@id([userId, productId])
+   @@index([productId])
+}
+
+model Category {
+   id          Int       @id @default(autoincrement())
+   name        String    @unique
+   slug        String    @unique
+   description String?
+   // Картинка плитки на главной. Пока null, показывается заглушка.
+   image       String?
+   // Цвет фона плитки на главной
+   tint        String    @default("#D9D0BC")
+   // Первая категория по порядку показывается крупной тёмной плиткой
+   sortOrder   Int       @default(0)
+   products    Product[]
+}
+
+model Product {
+   id          Int      @id @default(autoincrement())
+   name        String
+   slug        String   @unique
+   description String?
+   // Цена в центах: 18900 = $189
+   price       Int
+   // Первая картинка идёт в карточку, остальные в галерею. Пусто = заглушка.
+   images      String[]
+   color       String
+   colorHex    String   @default("#14181F")
+   // Короткая строка под названием: "Boiled wool, navy"
+   material    String?
+   gender      Gender   @default(UNISEX)
+   badge       Badge?
+   // Показывать в hero на главной
+   isFeatured  Boolean  @default(false)
+   // Одинаковый styleCode = один фасон в разных цветах (кружки цвета в карточке)
+   styleCode   String?
+
+   categoryId Int
+   category   Category @relation(fields: [categoryId], references: [id])
+
+   variants  ProductVariant[]
+   favorites Favorite[]
+
+   createdAt DateTime @default(now())
+   updatedAt DateTime @updatedAt
+
+   @@index([categoryId])
+   @@index([styleCode])
+   @@index([gender])
+}
+
+model ProductVariant {
+   id   Int  @id @default(autoincrement())
+   size Size
+
+   stock Int @default(0)
+
+   product    Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+   productId  Int
+   orderItems OrderItem[]
+
+   @@unique([productId, size])
+}
+
+model Order {
+   id Int @id @default(autoincrement())
+   // Случайный id для ссылки /orders/[publicId]: по нему заказ видно и гостю
+   publicId String @unique @default(cuid())
+
+   // Все суммы в центах
+   totalAmount Int
+   shipping    Int         @default(0)
+   discount    Int         @default(0)
+   promoCode   String?
+   status      OrderStatus @default(NEW)
+
+   name    String
+   email   String?
+   phone   String
+   address String
+   comment String?
+
+   userId Int?
+   user   User? @relation(fields: [userId], references: [id])
+
+   items OrderItem[]
+
+   createdAt DateTime @default(now())
+   updatedAt DateTime @updatedAt
+
+   @@index([userId])
+}
+
+model OrderItem {
+   id       Int @id @default(autoincrement())
+   quantity Int
+   // Цена за штуку на момент заказа, в центах
+   price    Int
+
+   orderId Int
+   order   Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+   variantId Int
+   variant   ProductVariant @relation(fields: [variantId], references: [id])
+
+   @@index([orderId])
+}
+
+model NewsletterSubscriber {
+   id        Int      @id @default(autoincrement())
+   email     String   @unique
+   createdAt DateTime @default(now())
+}
+
+model ContactMessage {
+   id        Int      @id @default(autoincrement())
+   topic     String
+   name      String
+   email     String
+   message   String
+   createdAt DateTime @default(now())
+}
