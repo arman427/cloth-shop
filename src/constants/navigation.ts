@@ -52,7 +52,6 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
 export const PAYMENT_METHODS = ["VISA", "Mastercard", "Apple Pay", "PayPal"] as const;
 
 export const SOCIAL_LINKS: NavLink[] = [
-   { label: "Instagram", href: "https://instagram.com" },
    { label: "Pinterest", href: "https://pinterest.com" },
    { label: "TikTok", href: "https://tiktok.com" },
 ];
