@@ -9,6 +9,11 @@ export const HERO_FACTS: HeroFact[] = [
    { title: "4.8", text: "From 3,200 reviews.", rating: 4.8 },
 ];
 
+/** Студийные фото для слайдов hero по slug товара. Если фото нет, берётся первая картинка товара. */
+export const HERO_IMAGES: Record<string, string> = {
+   "field-overshirt-ochre": "/images/hero/field-overshirt-ochre.jpg",
+};
+
 export const PROCESS_STEPS: ProcessStep[] = [
    {
       title: "Drafted on paper",

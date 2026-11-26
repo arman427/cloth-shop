@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, Container, MediaImage, Stars, tintFromHex } from "@/components/ui";
+import { HERO_IMAGES } from "@/constants/home";
 import { useCarousel } from "@/hooks";
 import { useT } from "@/providers/LocaleProvider";
 import type { HeroFact, Product } from "@/types";
@@ -88,7 +89,7 @@ export function Hero({ products, facts }: HeroProps) {
                   {products.map((item, itemIndex) => (
                      <MediaImage
                         key={item.id}
-                        src={item.images[0]}
+                        src={HERO_IMAGES[item.slug] ?? item.images[0]}
                         alt={t(item.name)}
                         label={t("Hero photo")}
                         tint={tintFromHex(item.colorHex, 18)}
